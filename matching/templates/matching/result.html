@@ -1,17 +1,17 @@
 {% load staticfiles %}
 <img src='{{ profile.upload_image.url }}'>
-{% with 'matching/dog/'|add:profile.result1_name|add:'.jpg' as image_static %}
+{% with 'matching/img/dog/'|add:profile.result1_name|add:'.jpg' as image_static %}
   <img src="{% static image_static %}">
   <strong>{{ profile.result1_value }}%</strong>
 {% endwith %}
 
-{% with 'matching/dog/'|add:profile.result2_name|add:'.jpg' as image_static %}
+{% with 'matching/img/dog/'|add:profile.result2_name|add:'.jpg' as image_static %}
   <img src="{% static image_static %}">
   <strong>{{ profile.result2_value }}%</strong>
 
 {% endwith %}
 
-{% with 'matching/dog/'|add:profile.result3_name|add:'.jpg' as image_static %}
+{% with 'matching/img/dog/'|add:profile.result3_name|add:'.jpg' as image_static %}
   <img src="{% static image_static %}">
   <strong>{{ profile.result3_value }}%</strong>
 
