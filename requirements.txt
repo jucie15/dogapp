@@ -1,0 +1,5 @@
+django==1.11
+tensorflow
+keras
+numpy
+opencv-python
