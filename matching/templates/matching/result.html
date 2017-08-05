@@ -58,6 +58,8 @@
           <p><strong>{{ profile.result3_value }}%</strong></h3>
 
         {% endwith %}
+
+        <a href="http://www.facebook.com/sharer/sharer.php?u={{request.scheme}}://{{request.get_host}}{{request.path}}">FaceBook 공유하기</a>
       </div>
     </div>
   </div>
