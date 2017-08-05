@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from matching.forms import ProfileForm
+from dog.main import human_or_dog
 import os
 
 def index(request):
@@ -8,6 +9,7 @@ def index(request):
             request.FILES)
         if form.is_valid():
             profile = form.save()
+            human_or_dog(profile.upload_image)
     else:
         form = ProfileForm()
 
