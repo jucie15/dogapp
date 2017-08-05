@@ -1,19 +1,68 @@
-{% load staticfiles %}
-<img src='{{ profile.upload_image.url }}'>
-{% with 'matching/img/dog/'|add:profile.result1_name|add:'.jpg' as image_static %}
-  <img src="{% static image_static %}">
-  <strong>{{ profile.result1_value }}%</strong>
-{% endwith %}
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-{% with 'matching/img/dog/'|add:profile.result2_name|add:'.jpg' as image_static %}
-  <img src="{% static image_static %}">
-  <strong>{{ profile.result2_value }}%</strong>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-{% endwith %}
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+  img{
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+  }
+</style>
 
-{% with 'matching/img/dog/'|add:profile.result3_name|add:'.jpg' as image_static %}
-  <img src="{% static image_static %}">
-  <strong>{{ profile.result3_value }}%</strong>
+</head>
+<body>
+  {% load staticfiles %}
+  <div class="container">
+    <div class="row upload-image center">
+      <div class="col-sm-4 result-image">
+      </div>
+      <div class="col-sm-4 result-image">
+        <img src='{{ profile.upload_image.url }}'>
+        <h2><p><strong >닮은 강아지는~~</strong>
 
-{% endwith %}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 result-image">
+          {% with 'matching/img/dog/'|add:profile.result1_name|add:'.jpg' as image_static %}
+            <img src="{% static image_static %}">
+            <h3><strong>{{ profile.result1_name }}</strong>
+            <p><strong>{{ profile.result1_value }}%</strong></h3>
+          {% endwith %}
+      </div>
+
+      <div class="col-sm-4 result-image">
+
+        {% with 'matching/img/dog/'|add:profile.result2_name|add:'.jpg' as image_static %}
+          <img src="{% static image_static %}">
+          <h3><strong>{{ profile.result2_name }}</strong>
+          <p><strong>{{ profile.result2_value }}%</strong></h3>
+        {% endwith %}
+      </div>
+
+      <div class="col-sm-4 result-image">
+
+        {% with 'matching/img/dog/'|add:profile.result3_name|add:'.jpg' as image_static %}
+          <img src="{% static image_static %}">
+          <h3><strong>{{ profile.result3_name }}</strong>
+          <p><strong>{{ profile.result3_value }}%</strong></h3>
+
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
 
