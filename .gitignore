@@ -1,0 +1,14 @@
+dog/
+media/
+*.log
+*.egg-info
+*.pot
+*.py[co]
+*.pyc
+.tox/
+*/.DS_Store
+.DS_Store
+img/
+__pycache__
+*.sqlite3
+
