@@ -67,12 +67,11 @@ def VGG16_predict_breed(img_path):
     predicted_vector = VGG16_model.predict(bottleneck_feature)
 
     sorted_dognames = [x for (y,x) in sorted(zip(predicted_vector[0],dog_names), reverse=True)]
-    sorted_pre_vec = sorted(predicted_vector[0])
-    print(sorted_dognames[0:3])
-    print(sorted_pre_vec[0:3])
+    sorted_pre_vec = sorted(predicted_vector[0], reverse=True)
+
     # return dog breed that is predicted by the model
-    return dog_names[np.argmax(predicted_vector)]
+    return (sorted_dognames[0:3], sorted_pre_vec[0:3])
 
 
 def human_or_dog(img_path):
-    print(VGG16_predict_breed(img_path))
+    return VGG16_predict_breed(img_path)
